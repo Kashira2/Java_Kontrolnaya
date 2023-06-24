@@ -1,7 +1,10 @@
 package ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import marketApi.Toy;
 import presenter.Presenter;
 
 public class ConsoleUi implements View {
@@ -15,18 +18,25 @@ public class ConsoleUi implements View {
 
     @Override
     public void start() {
-        // presenter.loadFile();
+        presenter.loadFile();
         while (work) {
             String key = scan();
             switch (key) {
                 case "1":
                     presenter.showToys();
+                    break;
                 case "2":
-                    presenter.addToys();
+                    String name = scanName();
+                    Integer quant = scanQuant();
+                    Double period = scanPeriod();
+                    presenter.addToys(name, quant, period);
+                    break;
                 case "3":
                     presenter.playToys();
+                    break;
                 case "4":
                     print("Программа завершена!");
+                    presenter.saveFile();
                     work = false;
                     scanner.close();
                     break;
@@ -46,6 +56,21 @@ public class ConsoleUi implements View {
                 4) Выйти из программы
                     """);
         return scanner.next();
+    }
+
+    private String scanName() {
+        print("Введите имя новой игрушки: ");
+        return scanner.next();
+    }
+
+    private Integer scanQuant() {
+        print("Введите колличество этих игрушек: ");
+        return scanner.nextInt();
+    }
+
+    private Double scanPeriod() {
+        print("Введите частоту выпадения от 1 до 100%: ");
+        return scanner.nextDouble();
     }
 
     @Override

@@ -18,9 +18,20 @@ public class Presenter {
         view.print(answer);
     }
 
-    public void addToys() {
+    public void addToys(String name,Integer quant, Double period) {
+        service.add(name, quant, period);
     }
 
     public void playToys() {
+        service.save();
     }
+
+      public void loadFile() {
+        service.load();
+    }
+
+    public void saveFile() {
+        service.savefile();
+    }
+
 }

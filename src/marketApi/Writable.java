@@ -8,4 +8,3 @@ public interface Writable {
 
     public Object inPut();
 }
-

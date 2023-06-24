@@ -1,19 +1,19 @@
 package marketApi;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Toys<Toy> {
-    private HashSet<Toy> toys;
+    private ArrayList<Toy> toys;
 
-    public Toys(HashSet<Toy> toys) {
+    public Toys(ArrayList<Toy> toys) {
         this.toys = toys;
     }
 
     public Toys() {
-        this(new HashSet<>());
+        this(new ArrayList());
     }
 
-    public HashSet<Toy> getTree() {
+    public ArrayList<Toy> getTree() {
         return toys;
     }
 

@@ -37,6 +37,6 @@ public class FileHandler implements Writable {
             e.printStackTrace();
             return null;
         }
-
     }
+
 }

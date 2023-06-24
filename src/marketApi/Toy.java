@@ -4,9 +4,9 @@ public class Toy {
     private int id;
     private String name;
     private Integer quantity;
-    private Integer period;
+    private Double period;
 
-    public Toy(int id, String name, Integer quantity, Integer period) {
+    public Toy(int id, String name, Integer quantity, Double period) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -29,7 +29,12 @@ public class Toy {
         this.quantity = quantity;
     }
 
-    public String getInfo() {
-        return id + "" + name;
+    public Double getPeriod() {
+        return period;
+    }
+
+    @Override
+    public String toString() {
+        return "Игрушка id = " + id + ", название = " + name + ", колличество = " + quantity;
     }
 }
