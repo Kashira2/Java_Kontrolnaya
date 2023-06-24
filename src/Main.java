@@ -10,6 +10,10 @@ public class Main {
         Service service = new Service(toys);
         ConsoleUi view = new ConsoleUi();
         Presenter presenter = new Presenter(view, service);
+
+        service.add("Кукла", 5, 30.00);
+        service.add("Машинка", 5, 50.00);
+
         view.start();
     }
 }

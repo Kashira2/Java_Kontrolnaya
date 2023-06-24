@@ -1,7 +1,6 @@
 package marketApi;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RandomToy {
     public Toy choosePeriod(ArrayList<Toy> toys) {
@@ -15,6 +14,6 @@ public class RandomToy {
             if (countWeight >= rand)
                 return toy;
         }
-        throw new RuntimeException("Не получилось");
+        throw new RuntimeException("Нет игрушек");
     }
 }

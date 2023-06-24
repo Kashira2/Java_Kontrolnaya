@@ -22,8 +22,8 @@ public class Presenter {
         service.add(name, quant, period);
     }
 
-    public void playToys() {
-        service.save();
+    public Toy playToys() {
+        return service.game();
     }
 
       public void loadFile() {

@@ -18,7 +18,7 @@ public class ConsoleUi implements View {
 
     @Override
     public void start() {
-        presenter.loadFile();
+        // presenter.loadFile();
         while (work) {
             String key = scan();
             switch (key) {
@@ -32,11 +32,11 @@ public class ConsoleUi implements View {
                     presenter.addToys(name, quant, period);
                     break;
                 case "3":
-                    presenter.playToys();
+                    print("Вам выпала игрушка = " + presenter.playToys().getName());
                     break;
                 case "4":
                     print("Программа завершена!");
-                    presenter.saveFile();
+                    // presenter.saveFile();
                     work = false;
                     scanner.close();
                     break;

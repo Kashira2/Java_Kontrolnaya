@@ -13,7 +13,7 @@ public class Toys<Toy> {
         this(new ArrayList());
     }
 
-    public ArrayList<Toy> getTree() {
+    public ArrayList<Toy> getToys() {
         return toys;
     }
 

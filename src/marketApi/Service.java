@@ -6,13 +6,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Service implements Serializable {
-    private Integer quantity;
     private ArrayList<Toy> toys;
     private int id;
     private FileHandler file = new FileHandler();
 
-    public Service(ArrayList<Toy> toys) {
-        this.toys = toys;
+    public Service(ArrayList<Toy> ntoys) {
+        this.toys = ntoys;
     }
 
     public String get() {
@@ -28,7 +27,7 @@ public class Service implements Serializable {
         toys.add(newToy);
     }
 
-    public void save() {
+    public Toy game() {
         RandomToy random = new RandomToy();
         Toy toy = random.choosePeriod(toys);
         String text = toy.toString();
@@ -43,6 +42,7 @@ public class Service implements Serializable {
         toys.remove(toy);
         toy.setQuantity(toy.getQuantity() - 1);
         toys.add(toy);
+        return toy;
     }
 
     public void load() {
